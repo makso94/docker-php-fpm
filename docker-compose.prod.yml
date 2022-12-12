@@ -1,0 +1,17 @@
+services:
+
+  php:
+    image: my_php_img
+    container_name: php
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./project:/project
+    ports:
+      - 9000:9000
+    networks:
+      php-nginx-prod:
+
+networks:
+  php-nginx-prod:
